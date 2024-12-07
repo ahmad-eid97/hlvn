@@ -1,0 +1,47 @@
+.hamburgerButton {
+  height: 85px;
+  scale: 0.35;
+  position: relative;
+  transform-origin: right;
+  top: 3px;
+  inset-inline-end: -8px;
+  pointer-events: none;
+}
+.hamburgerButton label {
+  display: flex;
+  flex-direction: column;
+  width: 70px;
+  cursor: pointer;
+}
+.hamburgerButton label span {
+  background: #184667;
+  border-radius: 10px;
+  height: 7px;
+  margin: 7px 0;
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+.hamburgerButton span:nth-of-type(1) {
+  width: 50%;
+}
+.hamburgerButton span:nth-of-type(2) {
+  width: 100%;
+}
+.hamburgerButton span:nth-of-type(3) {
+  width: 75%;
+}
+.hamburgerButton input[type=checkbox] {
+  display: none;
+}
+.hamburgerButton input[type=checkbox]:checked ~ span:nth-of-type(1) {
+  transform-origin: bottom;
+  transform: rotatez(45deg) translate(8px, 0px);
+}
+.hamburgerButton input[type=checkbox]:checked ~ span:nth-of-type(2) {
+  transform-origin: top;
+  transform: rotatez(-45deg);
+}
+.hamburgerButton input[type=checkbox]:checked ~ span:nth-of-type(3) {
+  transform-origin: bottom;
+  width: 50%;
+  transform: translate(30px, -11px) rotatez(45deg);
+}/*# sourceMappingURL=hamburger-button.module.css.map */

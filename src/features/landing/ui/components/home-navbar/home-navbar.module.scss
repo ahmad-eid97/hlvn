@@ -1,0 +1,75 @@
+.navSpacer {
+    @apply h-[20px] bg-[#edfcfe];
+}
+
+.homeNavbar {
+    @apply fixed inset-x-0 top-0 bg-[#edfcfe] z-50 transition-all duration-500;
+
+    img {
+        @apply me-auto;
+    }
+
+    .hamburger {
+        @apply hidden;
+    }
+
+    .content {
+        @apply flex flex-row items-center py-4 w-full max-w-[1170px] mx-auto px-6;
+    }
+
+    .navList {
+        @apply flex flex-row items-center bg-[#edfcfe] transition-colors duration-500;
+    }
+
+    .navItem {
+        @apply inline-block px-[28px] py-1.5 rounded-[5px] text-base text-[#184667] font-medium aria-selected:font-semibold hover:bg-orient-100 transition-all;
+    }
+
+    .navItem.final {
+        @apply text-[#2D4D67] font-semibold bg-orient-200 ms-[30px] hover:bg-orient-300 duration-500;
+    }
+
+    @media screen and (max-width: 768px) {
+        .hamburger {
+            @apply inline-block h-[85px] -my-4 w-[100px] cursor-pointer;
+        }
+
+        .navList {
+            @apply fixed inset-0 top-[85px] flex-col gap-2;
+            @apply  translate-x-[100%];
+
+            &[aria-expanded="true"] {
+                @apply translate-x-0 transition-all;
+            }
+
+            li {
+                @apply w-full px-6;
+            }
+        }
+
+        .navItem {
+            @apply w-full px-4 h-[50px] flex items-center;
+        }
+
+        .navItem.final {
+            @apply ms-0;
+        }
+    }
+}
+
+.homeNavbar.stuck, .homeNavbar[aria-expanded="true"] {
+    @apply bg-white;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0, rgba(27, 31, 35, 0.15) 0 0 0 1px;
+
+    .navList {
+        @apply bg-white;
+    }
+
+    .navItem {
+        @apply hover:bg-lynch-100;
+    }
+
+    .navItem.final {
+        @apply bg-orient-100 hover:bg-orient-200;
+    }
+}

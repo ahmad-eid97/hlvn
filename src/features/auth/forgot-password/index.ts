@@ -1,0 +1,1 @@
+export {default as ForgotPage} from "./ui/pages/forgot-page";

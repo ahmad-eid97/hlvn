@@ -1,0 +1,1 @@
+export {default as ProfilePage} from './ui/pages/profile-page';

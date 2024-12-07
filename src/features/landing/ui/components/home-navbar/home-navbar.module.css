@@ -1,0 +1,60 @@
+.navSpacer {
+  @apply h-[20px] bg-[#edfcfe];
+}
+
+.homeNavbar {
+  @apply fixed inset-x-0 top-0 bg-[#edfcfe] z-50 transition-all duration-500;
+}
+.homeNavbar img {
+  @apply me-auto;
+}
+.homeNavbar .hamburger {
+  @apply hidden;
+}
+.homeNavbar .content {
+  @apply flex flex-row items-center py-4 w-full max-w-[1170px] mx-auto px-6;
+}
+.homeNavbar .navList {
+  @apply flex flex-row items-center bg-[#edfcfe] transition-colors duration-500;
+}
+.homeNavbar .navItem {
+  @apply inline-block px-[28px] py-1.5 rounded-[5px] text-base text-[#184667] font-medium aria-selected:font-semibold hover:bg-orient-100 transition-all;
+}
+.homeNavbar .navItem.final {
+  @apply text-[#2D4D67] font-semibold bg-orient-200 ms-[30px] hover:bg-orient-300 duration-500;
+}
+@media screen and (max-width: 768px) {
+  .homeNavbar .hamburger {
+    @apply inline-block h-[85px] -my-4 w-[100px] cursor-pointer;
+  }
+  .homeNavbar .navList {
+    @apply fixed inset-0 top-[85px] flex-col gap-2;
+    @apply translate-x-[100%];
+  }
+  .homeNavbar .navList[aria-expanded=true] {
+    @apply translate-x-0 transition-all;
+  }
+  .homeNavbar .navList li {
+    @apply w-full px-6;
+  }
+  .homeNavbar .navItem {
+    @apply w-full px-4 h-[50px] flex items-center;
+  }
+  .homeNavbar .navItem.final {
+    @apply ms-0;
+  }
+}
+
+.homeNavbar.stuck, .homeNavbar[aria-expanded=true] {
+  @apply bg-white;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0, rgba(27, 31, 35, 0.15) 0 0 0 1px;
+}
+.homeNavbar.stuck .navList, .homeNavbar[aria-expanded=true] .navList {
+  @apply bg-white;
+}
+.homeNavbar.stuck .navItem, .homeNavbar[aria-expanded=true] .navItem {
+  @apply hover:bg-lynch-100;
+}
+.homeNavbar.stuck .navItem.final, .homeNavbar[aria-expanded=true] .navItem.final {
+  @apply bg-orient-100 hover:bg-orient-200;
+}/*# sourceMappingURL=home-navbar.module.css.map */
