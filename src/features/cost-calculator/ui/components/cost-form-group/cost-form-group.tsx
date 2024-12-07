@@ -23,9 +23,9 @@ function CostFormGroup(props: CostFormGroupProps) {
             setGroupCount(props.indexCount || 1);
             return;
         }
-
         const list = props.initialResult[props.name[1]][props.name[2]];
-        setGroupCount(list.length > 0 ? list.length : 1);
+        // setGroupCount(list.length > 0 ? list.length : 1);
+        setGroupCount(props.indexCount || 1);
     }, [props.initialResult, props.initialResult?.length, props.isList, props.name, props.indexCount]);
 
     const onAddGroup = () => setGroupCount((prev) => prev + 1);

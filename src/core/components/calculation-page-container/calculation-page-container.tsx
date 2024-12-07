@@ -21,11 +21,11 @@ type CalculationPageContainerProps = {
     isEdit?: boolean;
 };
 type ErrorResponse = {
-  response?: {
-    data: {
-      message: string;
+    response?: {
+        data: {
+            message: string;
+        };
     };
-  };
 };
 
 
@@ -61,13 +61,13 @@ function CalculationPageContainer({
         };
     };
     type ErrorResponse = {
-      response?: {
-        data: {
-          message: string;
+        response?: {
+            data: {
+                message: string;
+            };
         };
-      };
     };
-    
+
     // Function to handle edit operation
     const handleEdit = async (values) => {
         try {
@@ -76,7 +76,7 @@ function CalculationPageContainer({
                 console.error("ID input element not found or has no value");
                 return;
             }
-    
+
             const res = await ApiClient.put(`/population-calc/update-calculate/${idInputElement.value}`, cleanData(values));
             message.success("Updated successfully!");
             setisSubmit(true);
@@ -90,7 +90,7 @@ function CalculationPageContainer({
             }
         }
     };
-    
+
     // Function to handle calculate operation
     const handleCalculate = async (values) => {
         try {
@@ -111,7 +111,7 @@ function CalculationPageContainer({
             }
         }
     };
-    
+
     return (
         <Form
             form={form}
@@ -149,9 +149,9 @@ function CalculationPageContainer({
                                 onClick={
                                     onSave
                                         ? () => {
-                                              setCurrentAction("save");
-                                              onSave(form?.getFieldsValue());
-                                          }
+                                            setCurrentAction("save");
+                                            onSave(form?.getFieldsValue());
+                                        }
                                         : undefined
                                 }
                                 success

@@ -57,6 +57,7 @@ class CostCalculationRepository {
     }
 
     static async calculate(data: CostCalculation): Promise<CostCalculationResult> {
+        console.log(data)
         const res = await ApiClient.post("/cost-calc/calculate", data);
         const body = res.data ?? {};
 
@@ -83,7 +84,7 @@ class CostCalculationRepository {
 
     static async getHelpData(): Promise<CostCalculationHelpData> {
         const res = await ApiClient.get("/cost-calc/help-data");
-        
+
         return res.data.data;
     }
 
@@ -93,7 +94,7 @@ class CostCalculationRepository {
 
         return {
             initialValues: data,
-            result: data.alternatives?.map(alt=> ({
+            result: data.alternatives?.map(alt => ({
                 ...alt,
                 radiologies: alt.radiology,
                 other_investigations: alt.other_investigation,
