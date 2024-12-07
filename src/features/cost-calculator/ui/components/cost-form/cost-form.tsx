@@ -372,6 +372,7 @@ function CostForm({
                         form={form}
                         initialResult={initialResult}
                         name={[...currentAlternativeName, "labs"]}
+                        indexCount={form.getFieldsValue([...currentAlternativeName, "labs"])?.alternatives?.[currentAlternativeIndex]?.labs?.length || 1}
                         isList
                         renderItems={({ baseName }) => (
                             <div className="form-container-2">
@@ -403,6 +404,7 @@ function CostForm({
                         form={form}
                         initialResult={initialResult}
                         name={[...currentAlternativeName, "radiologies"]}
+                        indexCount={form.getFieldsValue([...currentAlternativeName, "radiologies"])?.alternatives?.[currentAlternativeIndex]?.radiologies?.length || 1}
                         isList
                         renderItems={({ baseName }) => (
                             <div className="form-container-2">
@@ -434,6 +436,7 @@ function CostForm({
                         form={form}
                         initialResult={initialResult}
                         name={[...currentAlternativeName, "other_investigations"]}
+                        indexCount={form.getFieldsValue([...currentAlternativeName, "other_investigations"])?.alternatives?.[currentAlternativeIndex]?.other_investigations?.length || 1}
                         isList
                         renderItems={({ baseName }) => (
                             <div className="form-container-2">
@@ -502,6 +505,7 @@ function CostForm({
                         form={form}
                         initialResult={initialResult}
                         name={[...currentAlternativeName, "medical_supplies"]}
+                        indexCount={form.getFieldsValue([...currentAlternativeName, "medical_supplies"])?.alternatives?.[currentAlternativeIndex]?.medical_supplies?.length || 1}
                         isList
                         renderItems={({ baseName }) => (
                             <div className="form-container-3">
@@ -522,6 +526,7 @@ function CostForm({
                         form={form}
                         initialResult={initialResult}
                         name={[...currentAlternativeName, "other_medical_staffs"]}
+                        indexCount={form.getFieldsValue([...currentAlternativeName, "other_medical_staffs"])?.alternatives?.[currentAlternativeIndex]?.other_medical_staffs?.length || 1}
                         isList
                         renderItems={({ baseName }) => (
                             <div className="form-container-2">

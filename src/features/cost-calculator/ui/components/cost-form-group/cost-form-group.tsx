@@ -15,6 +15,7 @@ type CostFormGroupProps = {
 };
 
 function CostFormGroup(props: CostFormGroupProps) {
+    console.log(props.form.getFieldsValue(props.name));
     const [groupCount, setGroupCount] = useState(props.indexCount || 1);
     const showDelete = groupCount > 1;
 
